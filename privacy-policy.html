@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Nova Vantage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black:      #050505;
+      --charcoal:   #111111;
+      --surface:    #181818;
+      --border:     #2A2A2A;
+      --orange:     #FF6B00;
+      --gold:       #F0A500;
+      --text:       #F5F5F5;
+      --text-dim:   #9A9A9A;
+      --text-muted: #555555;
+      --stripe:     rgba(255,107,0,0.05);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--black);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Tiger stripe background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -12deg,
+        var(--stripe) 0px,
+        var(--stripe) 28px,
+        transparent 28px,
+        transparent 60px
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* Header */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 40px 0 32px;
+      margin-bottom: 48px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      background: var(--surface);
+      border: 2px solid rgba(255,107,0,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 20px;
+      color: var(--orange);
+      letter-spacing: 1px;
+    }
+
+    .brand-text {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 13px;
+      letter-spacing: 3px;
+      color: var(--orange);
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(36px, 6vw, 56px);
+      letter-spacing: 2px;
+      color: var(--text);
+      line-height: 1.05;
+      margin-bottom: 12px;
+    }
+
+    .meta {
+      font-size: 13px;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+
+    .meta span {
+      color: var(--gold);
+    }
+
+    /* Orange accent bar */
+    .accent-bar {
+      width: 48px;
+      height: 4px;
+      background: var(--orange);
+      border-radius: 2px;
+      margin: 20px 0;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 40px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--orange), var(--gold));
+    }
+
+    h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 2px;
+      color: var(--orange);
+      margin-bottom: 14px;
+      text-transform: uppercase;
+    }
+
+    p {
+      color: var(--text-dim);
+      margin-bottom: 14px;
+      font-weight: 300;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      margin: 10px 0 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    li {
+      color: var(--text-dim);
+      padding-left: 20px;
+      position: relative;
+      font-weight: 300;
+    }
+
+    li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--orange);
+      font-weight: 700;
+    }
+
+    a {
+      color: var(--orange);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,107,0,0.3);
+      transition: border-color 0.2s;
+    }
+
+    a:hover { border-color: var(--orange); }
+
+    strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* Highlight box */
+    .highlight {
+      background: rgba(255,107,0,0.08);
+      border: 1px solid rgba(255,107,0,0.2);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 14px;
+      color: var(--text-dim);
+    }
+
+    .highlight strong { color: var(--orange); }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 32px;
+      margin-top: 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-brand {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+    }
+
+    .footer-brand span { color: var(--orange); }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-size: 13px;
+      color: var(--text-muted);
+      border-bottom-color: transparent;
+    }
+
+    .footer-links a:hover { color: var(--orange); }
+
+    @media (max-width: 600px) {
+      section { padding: 20px; }
+      footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">NV</div>
+        <div class="brand-text">Nova Vantage</div>
+      </div>
+      <h1>Privacy Policy</h1>
+      <div class="accent-bar"></div>
+      <p class="meta">Effective date: <span>June 1, 2025</span> &nbsp;·&nbsp; Last updated: <span id="updated"></span></p>
+    </header>
+
+    <section>
+      <h2>Overview</h2>
+      <p>Nova Vantage is a YouTube channel management application developed by <strong>Nova Vanguard LLC</strong>. This Privacy Policy explains what data we access, how we use it, and your rights as a user.</p>
+      <div class="highlight">
+        <strong>Short version:</strong> We access your YouTube channel data solely to display it to you inside the app. We do not sell your data, share it with third parties, or store it on our servers.
+      </div>
+    </section>
+
+    <section>
+      <h2>Information We Access</h2>
+      <p>Nova Vantage connects to your Google account via OAuth 2.0 to access the following data through the YouTube Data API v3 and YouTube Analytics API:</p>
+      <ul>
+        <li>Your YouTube channel name, handle, and profile avatar</li>
+        <li>Channel statistics including subscriber count, total views, and video count</li>
+        <li>Your uploaded videos including titles, thumbnails, view counts, likes, and comments</li>
+        <li>YouTube Analytics data including daily views, watch time, subscriber growth, and engagement metrics</li>
+        <li>Video metadata required to update video titles on your behalf</li>
+      </ul>
+      <p>This data is fetched in real time from Google's servers and displayed directly within the app. It is not transmitted to or stored on any Nova Vanguard servers.</p>
+    </section>
+
+    <section>
+      <h2>How We Use Your Data</h2>
+      <p>The data we access is used exclusively to provide the features of Nova Vantage:</p>
+      <ul>
+        <li><strong>Dashboard:</strong> Displaying your channel statistics and recent video performance</li>
+        <li><strong>Analytics:</strong> Showing views, watch time, subscriber growth, and engagement trends over the last 30 days</li>
+        <li><strong>Title Rotation:</strong> Updating video titles on YouTube on your behalf when you trigger a rotation</li>
+        <li><strong>Schedule Planner:</strong> Storing your planned upload dates and notes locally on your device</li>
+      </ul>
+      <p>We do not use your data for advertising, profiling, machine learning, or any purpose beyond displaying it to you.</p>
+    </section>
+
+    <section>
+      <h2>Data Storage</h2>
+      <p>Nova Vantage stores the following data <strong>locally on your device only</strong>:</p>
+      <ul>
+        <li>Your OAuth access token, stored securely using device-level encrypted storage</li>
+        <li>Your upload schedule plans and notes (AsyncStorage, local to your device)</li>
+        <li>Your title rotation lists (AsyncStorage, local to your device)</li>
+        <li>Your preferred refresh interval and notification settings</li>
+      </ul>
+      <p>None of this data is transmitted to Nova Vanguard LLC's servers. We operate without a backend — your credentials and content data never leave your device or Google's systems.</p>
+    </section>
+
+    <section>
+      <h2>Google API Services</h2>
+      <p>Nova Vantage uses Google's YouTube Data API v3 and YouTube Analytics API. Our use of these services complies with the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+      <p>Specifically, Nova Vantage:</p>
+      <ul>
+        <li>Only requests OAuth scopes necessary to provide app functionality</li>
+        <li>Does not allow humans to read your YouTube data (it is processed only by the app on your device)</li>
+        <li>Does not transfer your data to third parties except as necessary to provide the app's features</li>
+        <li>Does not use your data to serve advertisements</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Data Sharing</h2>
+      <p>We do not sell, rent, trade, or share your personal information or YouTube data with any third party. The only data transmissions that occur are between your device and Google's APIs directly.</p>
+      <p>We may disclose information if required to do so by law or in response to valid legal process.</p>
+    </section>
+
+    <section>
+      <h2>Revoking Access</h2>
+      <p>You can revoke Nova Vantage's access to your Google account at any time by:</p>
+      <ul>
+        <li>Tapping <strong>Sign Out</strong> in the app's Settings screen</li>
+        <li>Visiting <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account Permissions</a> and removing Nova Vantage</li>
+      </ul>
+      <p>Revoking access will immediately invalidate your stored access token. No residual data remains on our servers because we have none.</p>
+    </section>
+
+    <section>
+      <h2>Children's Privacy</h2>
+      <p>Nova Vantage is not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us and we will take steps to delete it.</p>
+    </section>
+
+    <section>
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. When we do, we will update the "Last updated" date at the top of this page. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>If you have questions about this Privacy Policy or Nova Vantage's data practices, contact us at:</p>
+      <p><strong>Nova Vanguard LLC</strong><br />
+      Massillon, Ohio<br />
+      Email: <a href="mailto:histreness36027@gmail.com">histreness36027@gmail.com</a></p>
+    </section>
+
+    <footer>
+      <div class="footer-brand">© 2025 <span>Nova Vanguard LLC</span> · All rights reserved</div>
+      <div class="footer-links">
+        <a href="./terms.html">Terms of Service</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('updated').textContent = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  </script>
+</body>
+</html>
