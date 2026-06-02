@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — Nova Vantage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black:      #050505;
+      --charcoal:   #111111;
+      --surface:    #181818;
+      --border:     #2A2A2A;
+      --orange:     #FF6B00;
+      --gold:       #F0A500;
+      --text:       #F5F5F5;
+      --text-dim:   #9A9A9A;
+      --text-muted: #555555;
+      --stripe:     rgba(255,107,0,0.05);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--black);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(-12deg, var(--stripe) 0px, var(--stripe) 28px, transparent 28px, transparent 60px);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .wrap { position: relative; z-index: 1; max-width: 740px; margin: 0 auto; padding: 0 24px 80px; }
+    header { border-bottom: 1px solid var(--border); padding: 40px 0 32px; margin-bottom: 48px; }
+    .brand { display: flex; align-items: center; gap: 16px; margin-bottom: 24px; }
+    .logo { width: 48px; height: 48px; border-radius: 10px; background: var(--surface); border: 2px solid rgba(255,107,0,0.4); display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 20px; color: var(--orange); letter-spacing: 1px; }
+    .brand-text { font-family: 'Bebas Neue', sans-serif; font-size: 13px; letter-spacing: 3px; color: var(--orange); text-transform: uppercase; }
+    h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(36px, 6vw, 56px); letter-spacing: 2px; color: var(--text); line-height: 1.05; margin-bottom: 12px; }
+    .meta { font-size: 13px; color: var(--text-muted); letter-spacing: 0.5px; }
+    .meta span { color: var(--gold); }
+    .accent-bar { width: 48px; height: 4px; background: var(--orange); border-radius: 2px; margin: 20px 0; }
+    section { margin-bottom: 40px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 28px 32px; position: relative; overflow: hidden; }
+    section::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--orange), var(--gold)); }
+    h2 { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 2px; color: var(--orange); margin-bottom: 14px; text-transform: uppercase; }
+    p { color: var(--text-dim); margin-bottom: 14px; font-weight: 300; }
+    p:last-child { margin-bottom: 0; }
+    ul { list-style: none; margin: 10px 0 14px; display: flex; flex-direction: column; gap: 8px; }
+    li { color: var(--text-dim); padding-left: 20px; position: relative; font-weight: 300; }
+    li::before { content: '›'; position: absolute; left: 0; color: var(--orange); font-weight: 700; }
+    a { color: var(--orange); text-decoration: none; border-bottom: 1px solid rgba(255,107,0,0.3); transition: border-color 0.2s; }
+    a:hover { border-color: var(--orange); }
+    strong { color: var(--text); font-weight: 500; }
+    .highlight { background: rgba(255,107,0,0.08); border: 1px solid rgba(255,107,0,0.2); border-radius: 8px; padding: 16px 20px; margin: 16px 0; font-size: 14px; color: var(--text-dim); }
+    .highlight strong { color: var(--orange); }
+    footer { border-top: 1px solid var(--border); padding-top: 32px; margin-top: 48px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-brand { font-family: 'Bebas Neue', sans-serif; font-size: 13px; letter-spacing: 2px; color: var(--text-muted); }
+    .footer-brand span { color: var(--orange); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 13px; color: var(--text-muted); border-bottom-color: transparent; }
+    .footer-links a:hover { color: var(--orange); }
+    @media (max-width: 600px) { section { padding: 20px; } footer { flex-direction: column; align-items: flex-start; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">NV</div>
+        <div class="brand-text">Nova Vantage</div>
+      </div>
+      <h1>Terms of Service</h1>
+      <div class="accent-bar"></div>
+      <p class="meta">Effective date: <span>June 1, 2025</span> &nbsp;·&nbsp; Last updated: <span id="updated"></span></p>
+    </header>
+
+    <section>
+      <h2>Agreement</h2>
+      <p>By downloading, installing, or using Nova Vantage ("the App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree, do not use the App.</p>
+      <p>Nova Vantage is developed and operated by <strong>Nova Vanguard LLC</strong>, based in Massillon, Ohio.</p>
+    </section>
+
+    <section>
+      <h2>What Nova Vantage Does</h2>
+      <p>Nova Vantage is a YouTube channel management tool that allows creators to:</p>
+      <ul>
+        <li>View channel statistics and analytics pulled from the YouTube Data API and YouTube Analytics API</li>
+        <li>Manage and rotate video titles on their YouTube channel</li>
+        <li>Plan and track their upload schedule</li>
+        <li>Monitor video performance including views, likes, comments, and watch time</li>
+      </ul>
+      <div class="highlight">
+        <strong>Important:</strong> Nova Vantage requires you to connect your Google account. By doing so, you authorize the App to access and, where applicable, modify your YouTube channel data on your behalf.
+      </div>
+    </section>
+
+    <section>
+      <h2>Eligibility</h2>
+      <p>You must be at least 13 years of age to use Nova Vantage. By using the App, you represent that you meet this requirement. If you are under 18, you represent that a parent or guardian has reviewed and agreed to these Terms on your behalf.</p>
+      <p>You must have a valid Google account and an active YouTube channel to use the core features of the App.</p>
+    </section>
+
+    <section>
+      <h2>Your Account & Responsibilities</h2>
+      <p>You are responsible for:</p>
+      <ul>
+        <li>Maintaining the security of your Google account credentials</li>
+        <li>All activity that occurs through your connected Google account via Nova Vantage</li>
+        <li>Ensuring your use of the App complies with YouTube's Terms of Service and Community Guidelines</li>
+        <li>Any title changes, schedule entries, or other modifications made through the App</li>
+      </ul>
+      <p>Nova Vanguard LLC is not responsible for any consequences arising from changes made to your YouTube channel through Nova Vantage, including but not limited to changes in video performance, search ranking, or audience engagement.</p>
+    </section>
+
+    <section>
+      <h2>Acceptable Use</h2>
+      <p>You agree not to use Nova Vantage to:</p>
+      <ul>
+        <li>Violate YouTube's Terms of Service, API Terms of Service, or Community Guidelines</li>
+        <li>Automate actions in a manner that exceeds YouTube API quota limits</li>
+        <li>Attempt to reverse engineer, decompile, or extract source code from the App</li>
+        <li>Use the App for any unlawful purpose or in violation of any applicable laws</li>
+        <li>Attempt to gain unauthorized access to any systems or networks connected to the App</li>
+        <li>Interfere with the proper functioning of the App or its associated services</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Subscriptions & Payments</h2>
+      <p>Nova Vantage offers the following tiers:</p>
+      <ul>
+        <li><strong>Free:</strong> Limited access to core features at no charge</li>
+        <li><strong>Pro ($4.99/month or $39.99/year):</strong> Full analytics, unlimited title rotations, and schedule planning</li>
+        <li><strong>Creator ($9.99/month or $79.99/year):</strong> All Pro features plus expanded limits and priority support</li>
+      </ul>
+      <p>Paid subscriptions are processed through Google Play Billing. By subscribing, you agree to Google Play's billing terms. Subscriptions auto-renew unless cancelled at least 24 hours before the end of the current billing period.</p>
+      <p>Refunds are handled according to Google Play's refund policies. Nova Vanguard LLC does not issue refunds directly.</p>
+    </section>
+
+    <section>
+      <h2>Intellectual Property</h2>
+      <p>Nova Vantage, including its name, logo, design, code, and all associated content, is the property of Nova Vanguard LLC and is protected by applicable intellectual property laws.</p>
+      <p>Your YouTube channel data, videos, and content remain your property. Nova Vantage does not claim any ownership over your content.</p>
+      <p>You are granted a limited, non-exclusive, non-transferable license to use the App for its intended purpose. This license does not include the right to sublicense, sell, or distribute the App.</p>
+    </section>
+
+    <section>
+      <h2>Third-Party Services</h2>
+      <p>Nova Vantage integrates with Google's YouTube Data API v3 and YouTube Analytics API. Your use of these services is also subject to:</p>
+      <ul>
+        <li><a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">YouTube Terms of Service</a></li>
+        <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a></li>
+        <li><a href="https://developers.google.com/youtube/terms/api-services-terms-of-service" target="_blank" rel="noopener">YouTube API Terms of Service</a></li>
+      </ul>
+      <p>Nova Vanguard LLC is not responsible for the availability, accuracy, or actions of third-party services.</p>
+    </section>
+
+    <section>
+      <h2>Disclaimers & Limitation of Liability</h2>
+      <p>Nova Vantage is provided <strong>"as is"</strong> without warranties of any kind, express or implied. We do not warrant that the App will be uninterrupted, error-free, or that defects will be corrected.</p>
+      <p>To the maximum extent permitted by law, Nova Vanguard LLC shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability to use the App, including but not limited to loss of data, revenue, or channel performance.</p>
+      <p>Our total liability to you for any claims arising from these Terms or your use of the App shall not exceed the amount you paid to Nova Vanguard LLC in the 12 months preceding the claim.</p>
+    </section>
+
+    <section>
+      <h2>Termination</h2>
+      <p>You may stop using Nova Vantage at any time by uninstalling the App and revoking Google account access through your Google Account settings.</p>
+      <p>Nova Vanguard LLC reserves the right to suspend or terminate your access to the App at any time, with or without notice, if we believe you have violated these Terms or applicable law.</p>
+    </section>
+
+    <section>
+      <h2>Changes to These Terms</h2>
+      <p>We may update these Terms from time to time. When we do, we will update the "Last updated" date at the top of this page. Your continued use of the App after changes take effect constitutes acceptance of the revised Terms.</p>
+      <p>For material changes, we will make reasonable efforts to notify users through the App.</p>
+    </section>
+
+    <section>
+      <h2>Governing Law</h2>
+      <p>These Terms are governed by the laws of the State of Ohio, without regard to its conflict of law provisions. Any disputes arising from these Terms shall be resolved in the courts of Stark County, Ohio.</p>
+    </section>
+
+    <section>
+      <h2>Contact</h2>
+      <p>Questions about these Terms? Contact us at:</p>
+      <p>
+        <strong>Nova Vanguard LLC</strong><br />
+        Massillon, Ohio<br />
+        Email: <a href="mailto:histreness36027@gmail.com">histreness36027@gmail.com</a>
+      </p>
+    </section>
+
+    <footer>
+      <div class="footer-brand">© 2025 <span>Nova Vanguard LLC</span> · All rights reserved</div>
+      <div class="footer-links">
+        <a href="./privacy-policy.html">Privacy Policy</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('updated').textContent = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+  </script>
+</body>
+</html>
