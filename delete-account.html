@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delete Account — Nova Vantage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --black:    #050505;
+      --charcoal: #111111;
+      --surface:  #181818;
+      --border:   #2A2A2A;
+      --orange:   #FF6B00;
+      --gold:     #F0A500;
+      --text:     #F5F5F5;
+      --text-dim: #9A9A9A;
+      --muted:    #555555;
+      --danger:   #EF4444;
+      --stripe:   rgba(255,107,0,0.05);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--black);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -12deg,
+        var(--stripe) 0px,
+        var(--stripe) 28px,
+        transparent 28px,
+        transparent 60px
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--charcoal);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--orange), var(--gold));
+    }
+    .header-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 24px 24px 20px;
+    }
+    .brand {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 4px;
+    }
+    .header-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 36px;
+      letter-spacing: 3px;
+      color: var(--text);
+      line-height: 1;
+    }
+
+    /* ── Main ── */
+    main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Warning banner */
+    .warning-banner {
+      background: rgba(239,68,68,0.08);
+      border: 1px solid rgba(239,68,68,0.3);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 36px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .warning-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .warning-text strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--danger);
+      margin-bottom: 4px;
+    }
+    .warning-text p {
+      font-size: 13px;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    /* Section */
+    .section {
+      margin-bottom: 36px;
+    }
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    p {
+      font-size: 14px;
+      color: var(--text-dim);
+      margin-bottom: 12px;
+      line-height: 1.7;
+    }
+    p:last-child { margin-bottom: 0; }
+
+    /* What gets deleted list */
+    .delete-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 4px;
+    }
+    .delete-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--text-dim);
+    }
+    .delete-list li::before {
+      content: '✕';
+      color: var(--danger);
+      font-weight: 700;
+      font-size: 11px;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    /* Email CTA */
+    .email-cta {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .email-cta::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--orange), var(--gold));
+    }
+    .email-cta-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .email-cta-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 22px;
+      letter-spacing: 2px;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .email-link {
+      display: inline-block;
+      background: rgba(255,107,0,0.12);
+      border: 1px solid rgba(255,107,0,0.4);
+      border-radius: 8px;
+      padding: 12px 24px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--orange);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      transition: background 0.2s, border-color 0.2s;
+      margin-bottom: 16px;
+    }
+    .email-link:hover {
+      background: rgba(255,107,0,0.2);
+      border-color: var(--orange);
+    }
+    .email-note {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 12px;
+    }
+
+    /* Subject line helper */
+    .subject-helper {
+      background: var(--charcoal);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      margin-top: 16px;
+      text-align: left;
+    }
+    .subject-helper-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .subject-helper-value {
+      font-size: 13px;
+      color: var(--text-dim);
+      font-family: monospace;
+    }
+
+    /* Timeline */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .timeline-item {
+      display: flex;
+      gap: 16px;
+      padding-bottom: 20px;
+      position: relative;
+    }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .timeline-item:last-child .tl-line { display: none; }
+    .tl-dot-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .tl-dot {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(255,107,0,0.15);
+      border: 1px solid rgba(255,107,0,0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--orange);
+      flex-shrink: 0;
+    }
+    .tl-line {
+      flex: 1;
+      width: 1px;
+      background: var(--border);
+      margin-top: 4px;
+    }
+    .tl-content {
+      padding-top: 4px;
+      flex: 1;
+    }
+    .tl-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    .tl-desc {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 12px;
+    }
+    .footer-links a {
+      font-size: 12px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+    .footer-links a:hover { color: var(--orange); }
+    .footer-copy {
+      font-size: 11px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="brand">Nova Vantage · Nova Vanguard LLC</div>
+      <div class="header-title">Delete Your Account</div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Warning -->
+    <div class="warning-banner">
+      <div class="warning-icon">⚠️</div>
+      <div class="warning-text">
+        <strong>This action is permanent and cannot be undone.</strong>
+        <p>Deleting your account will permanently remove all your data from Nova Vantage servers. Your YouTube channel is not affected — only your Nova Vantage account and associated data will be deleted.</p>
+      </div>
+    </div>
+
+    <!-- What gets deleted -->
+    <div class="section">
+      <div class="section-label">What gets deleted</div>
+      <div class="card">
+        <ul class="delete-list">
+          <li>Your Nova Vantage account and authentication record</li>
+          <li>Channel profile data (name, handle, avatar) stored on our servers</li>
+          <li>Saved swipe file items and content you've saved in the app</li>
+          <li>Notification preferences and quiet hours settings</li>
+          <li>Push notification token</li>
+          <li>All usage data and session history associated with your account</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- What is NOT deleted -->
+    <div class="section">
+      <div class="section-label">What is not affected</div>
+      <div class="card">
+        <p>Your Google account and YouTube channel are completely unaffected. Nova Vantage only reads your YouTube data — it does not store your videos, comments, or any content from your channel beyond basic profile information.</p>
+        <p>Deleting your Nova Vantage account does not revoke Google OAuth access. To fully disconnect, also visit <a href="https://myaccount.google.com/permissions" style="color:var(--orange);">myaccount.google.com/permissions</a> and remove Nova Vantage from your connected apps.</p>
+      </div>
+    </div>
+
+    <!-- How to request -->
+    <div class="section">
+      <div class="section-label">Request deletion</div>
+      <div class="email-cta">
+        <div class="email-cta-label">Send us an email</div>
+        <div class="email-cta-title">REQUEST ACCOUNT DELETION</div>
+        <a href="mailto:novavanguardllc@gmail.com?subject=Account%20Deletion%20Request%20%E2%80%94%20Nova%20Vantage&body=Please%20delete%20my%20Nova%20Vantage%20account%20and%20all%20associated%20data.%0A%0AYouTube%20Channel%20Name%3A%20%5Byour%20channel%20name%5D%0AGoogle%20Account%20Email%3A%20%5Byour%20email%5D%0A%0AI%20understand%20this%20action%20is%20permanent%20and%20cannot%20be%20undone." class="email-link">
+          📧 novavanguardllc@gmail.com
+        </a>
+        <div class="subject-helper">
+          <div class="subject-helper-label">Use this subject line</div>
+          <div class="subject-helper-value">Account Deletion Request — Nova Vantage</div>
+        </div>
+        <div class="email-note">Include your YouTube channel name and the Google account email used to sign in.</div>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="section">
+      <div class="section-label">What happens next</div>
+      <div class="card">
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="tl-dot-wrap">
+              <div class="tl-dot">1</div>
+              <div class="tl-line"></div>
+            </div>
+            <div class="tl-content">
+              <div class="tl-title">We receive your request</div>
+              <div class="tl-desc">You'll get a confirmation reply within 2 business days.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-dot-wrap">
+              <div class="tl-dot">2</div>
+              <div class="tl-line"></div>
+            </div>
+            <div class="tl-content">
+              <div class="tl-title">We verify your identity</div>
+              <div class="tl-desc">We confirm the request matches the account on file.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-dot-wrap">
+              <div class="tl-dot">3</div>
+              <div class="tl-line"></div>
+            </div>
+            <div class="tl-content">
+              <div class="tl-title">Data is permanently deleted</div>
+              <div class="tl-desc">All account data is removed within 7 days of verification.</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="tl-dot-wrap">
+              <div class="tl-dot">4</div>
+            </div>
+            <div class="tl-content">
+              <div class="tl-title">Confirmation sent</div>
+              <div class="tl-desc">We'll email you once deletion is complete.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="footer-links">
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="mailto:novavanguardllc@gmail.com">Contact</a>
+    </div>
+    <div class="footer-copy">© 2025 Nova Vanguard LLC · All rights reserved</div>
+  </footer>
+
+</body>
+</html>
