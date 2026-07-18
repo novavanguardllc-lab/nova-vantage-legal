@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Nova Vantage — AI-Powered Creator Tools</title>
+<title>Nova Vantage</title>
 <style>
   :root {
     --black: #0B0E14;
@@ -30,24 +30,25 @@
   }
   header {
     text-align: center;
-    padding: 60px 20px 40px;
+    padding: 50px 20px 20px;
   }
   header h1 {
     font-size: 2.6rem;
     letter-spacing: 1px;
     color: var(--orange);
-    text-shadow: 0 0 20px rgba(255,107,53,0.3);
-  }
-  header p.tagline {
-    margin-top: 12px;
-    font-size: 1.2rem;
-    color: var(--gold);
-    font-style: italic;
   }
   main {
     max-width: 720px;
     margin: 0 auto;
     padding: 0 24px 60px;
+  }
+  .purpose {
+    background: rgba(255,107,53,0.08);
+    border: 1px solid var(--orange);
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin: 20px 0 30px;
+    font-size: 1.1rem;
   }
   section {
     background: rgba(255,255,255,0.03);
@@ -69,10 +70,6 @@
     margin-top: 10px;
   }
   li { margin-bottom: 8px; }
-  .cta {
-    text-align: center;
-    margin: 40px 0;
-  }
   footer {
     text-align: center;
     padding: 30px 20px;
@@ -98,45 +95,47 @@
 <div class="stripe-bar"></div>
 
 <header>
-  <h1>NOVA VANTAGE</h1>
-  <p class="tagline">Nova Vantage doesn't make content. It makes creators.</p>
+  <h1>Nova Vantage</h1>
 </header>
 
 <main>
+  <p class="purpose">
+    <strong>Nova Vantage</strong> is a desktop and mobile application for
+    YouTube content creators. It connects to a creator's own YouTube
+    account to help them research verified news sources, draft video
+    scripts in their own voice, generate SEO-optimized titles and
+    descriptions, fact-check claims before publishing, and track their
+    channel's performance over time.
+  </p>
+
   <section>
-    <h2>What It Does</h2>
-    <p>
-      Nova Vantage is an AI-powered companion app for YouTube creators, built by
-      Nova Vanguard LLC. It helps creators research verified sources, draft scripts
-      in their own voice, generate SEO packages, fact-check claims, and track
-      performance — all without generating fake voiceovers, AI video, or avatars.
-      The content is always the creator's own.
-    </p>
+    <h2>What Nova Vantage Does</h2>
+    <ul>
+      <li>Reads a signed-in creator's own YouTube channel and video data to display performance analytics</li>
+      <li>Generates video scripts and titles based on the creator's input and past content style</li>
+      <li>Fact-checks claims a creator plans to include in a video</li>
+      <li>Does not post, upload, or publish anything on the creator's behalf without their direct action</li>
+    </ul>
   </section>
 
   <section>
-    <h2>Core Features</h2>
+    <h2>What Nova Vantage Does Not Do</h2>
     <ul>
-      <li>Verified-source research assistant</li>
-      <li>Script generation in the creator's own voice</li>
-      <li>SEO title &amp; description optimization</li>
-      <li>Built-in fact checking</li>
-      <li>YouTube channel performance tracking</li>
+      <li>No AI-generated voiceovers</li>
+      <li>No AI-generated video or avatars</li>
+      <li>No selling or sharing of a creator's YouTube data with third parties</li>
     </ul>
   </section>
 
   <section>
     <h2>Your Data</h2>
     <p>
-      Nova Vantage connects securely to your YouTube account via Google's official
-      OAuth sign-in. We only request the permissions needed to power the features
-      above, and you can revoke access at any time from your Google Account settings.
+      Nova Vantage requests access to YouTube Data API v3 information only
+      to power the features listed above. Access can be revoked at any time
+      from the app's Settings screen or from
+      <a href="https://myaccount.google.com/permissions" style="color: var(--gold);">Google Account Permissions</a>.
     </p>
   </section>
-
-  <div class="cta">
-    <p>Have questions? Reach out any time.</p>
-  </div>
 </main>
 
 <footer>
